@@ -12,14 +12,13 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 		#header.wrap
 			#logo
 				h1
-					a(href="/") InstaPoll.in
+					a(href="/") Consumidores Unidos
 
 		#pollQuestions.wrap
 			h3= poll.title
-			h4= poll.subtitle
 			p
 				span
-					strong Short url: 
+					strong Link corto:
 					a(href="http://instapoll.in/p/#{poll.short_url}") http://instapoll.in/p/#{poll.short_url}
 
 		#poll.wrap
@@ -35,9 +34,9 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 
 		#footer
 			.wrap
-				p InstaPolls, all rights reserved 2012 &copy; Made by 
+				p InstaPolls, all rights reserved 2012 &copy; Made by
 					a(href="http://vulsai.com") Vulsai
-					
+
 	script(type="text/javascript").
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 	script(type="text/javascript").

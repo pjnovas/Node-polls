@@ -12,8 +12,8 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 		link(rel="shortcut icon", href="/favicon.ico")
 		script(type="text/javascript").
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-115447-19']);
-			_gaq.push(['_trackPageview']);	
+			_gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+			_gaq.push(['_trackPageview']);
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -24,33 +24,20 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 		#header.wrap
 			#logo
 				h1
-					a(href="/") InstaPoll.in
+					a(href="/") Consumidores Unidos
 			#tagline
-				h2 Simple polls. Live feedback.
-				
-			#siteShare
-				ul
-					li
-						<g:plusone size="medium" href="http://instapoll.in"></g:plusone>
-					li
-						a.twitter-share-button(href="https://twitter.com/share", data-url="http://instapoll.in") Tweet
-					li
-						<iframe src="//www.facebook.com/plugins/like.php?href=http://instapoll.in&amp;send=false&amp;layout=standard&amp;width=300&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=232069393501695" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:35px;" allowTransparency="true"></iframe>
-						
-			#addNewPollCta
-				a.cta(href="/#newPoll")
-					strong + Create a new Poll
+				h2 Vos decís que empresa es buena y cual no.
 
 		block body
 
 		#footer
 			.wrap
-				p InstaPolls, all rights reserved 2012 &copy; Made by 
+				p InstaPolls, all rights reserved 2012 &copy; Made by
 					a(href="http://vulsai.com") Vulsai
 					em
 						a(href="/terms") Terms &amp; Conditions
-					
-					
+
+
 	script(type="text/javascript").
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 	script(type="text/javascript").
@@ -59,15 +46,15 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 			po.src = 'https://apis.google.com/js/plusone.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		})();
-		
+
 	script(type="text/javascript").
 		var is_ssl = ("https:" == document.location.protocol);
 		var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
 		document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
 	script(type="text/javascript").
-		var feedback_widget_options = {};		
-		feedback_widget_options.display = "overlay";  
-		feedback_widget_options.company = "instapoll";
+		var feedback_widget_options = {};
+		feedback_widget_options.display = "overlay";
+		feedback_widget_options.company = "consumidoresunidos";
 		feedback_widget_options.placement = "left";
 		feedback_widget_options.color = "#222";
 		feedback_widget_options.style = "idea";

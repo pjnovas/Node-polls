@@ -5,8 +5,8 @@
 
 var express = require('express');
 var sio = require('socket.io');
+var passport = require('passport');
 var mongoose = require('mongoose');
-var everyauth = require('everyauth');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -22,11 +22,6 @@ var server = require('http').Server(app);
 
 mongoose.connect('mongodb://' + config.db.host + '/' + config.db.name);
 
-// Auth strategies
-
-require('./auth/strategies');
-
-
 // Configuration
 
 app.set('views', __dirname + '/views');
@@ -36,20 +31,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({ secret: config.session.secret, resave: false, saveUninitialized: false}));
-app.use(morgan('combined', {stream:fs.createWriteStream('./log_file.log', {flags: 'a'})}));
-app.use(everyauth.middleware());
+app.use(morgan());
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+var Poll = require('./models/poll');
+var User = require('./models/user');
 
 // Routes
-
+require('./auth')(app);
 require('./routes');
 
 if(process.env.NODE_ENV === 'production') {
-  app.use(errorHandler()); 
+  app.use(errorHandler());
   process.on('uncaughtException', function (err) {
     console.log('Uncaught exception: ' + err);
   });
 } else {
-  app.use(errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(errorHandler({ dumpExceptions: true, showStack: true }));
 }
 
 // Socket.io
@@ -62,10 +62,9 @@ io.sockets.on('connection', function(socket){
 	});
 
 	socket.on('vote', function(data){
-		io.sockets.in('poll_'+data.poll_id).emit('vote proc', data);		
+		io.sockets.in('poll_'+data.poll_id).emit('vote proc', data);
 	});
 });
 
 // Server listen port 3000
-
-server.listen(3000);
+server.listen(5000);

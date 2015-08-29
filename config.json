@@ -1,22 +1,21 @@
 {
 		"db" : 	{
 				"host"	:	"localhost"
-			,	"name"	:	"polls"
-		}
-	,	"tw" :	{
-				"consumerKey" 		: "WLYfThmboHfQQEpJ7vdahQ"
-			,	"consumerSecret"	:	"drNeLpew3s4ESBNkCfX0I2sWVbn32pkoIVqS4g6obS0"
-		}
-	,	"fb" : {
-			"appId" : "196328707134645"
-		,	"appSecret"	:	"d282cdae22bc6cd0d27bd919c274fd2e"
+			,	"name"	:	"consumidoresunidos"
+		},
+		"keys": {
+			"twitter" :	{
+					"consumerKey" 		: "56vl5ZJz8rWep6oRoCwLYYW7l"
+				,	"consumerSecret"	:	"xoGPxwhu55V5VrHGLR9ooFAYWBlkz3rHWqP2tUrdIeSfmVDW6X"
+				, "callbackURL": 	"http://local.host:5000/auth/twitter/callback"
+			}
 		}
 	,	"session" : {
-			"secret"	: "reptaaar"
+			"secret"	: "top secret aksjdnas kdnask"
 	}
 	, "host" : {
-				"domain" : "http://local.host:3000" 
-			,	"port"	 : 3000
+				"domain" : "http://local.host:5000"
+			,	"port"	 : 5000
 			, "ip"		 : "127.0.0.1"
 		}
 }

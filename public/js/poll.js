@@ -36,7 +36,7 @@
         },
         yAxis: {
             title: {
-                text: 'Votes'
+                text: 'Opiniones'
             }
         },
 				legend : false,
@@ -64,7 +64,7 @@
         tooltip: {
             formatter: function() {
                 var point = this.point,
-                  s = this.x +':<b>'+ this.y +' votes';
+                  s = this.x +':<b>'+ this.y +' opiniones';
                 	return s;
                 }
         },
@@ -97,12 +97,12 @@
 					});
 				} else if(data) {
 					alert(data);
-				}		
+				}
 			});
 		});
-		
+
 		$('#lastpolls li').hide();
-		$('#lastpolls li:first').addClass('currentTick').show();		
+		$('#lastpolls li:first').addClass('currentTick').show();
 		setInterval(function() {
 			var nextItem = $('#lastpolls .currentTick').next();
 			if (nextItem.length == 0){
@@ -122,4 +122,3 @@
 			chart.series[0].data[data.option_index].update(++chart.series[0].data[data.option_index].y);
 		});
 	});
-
